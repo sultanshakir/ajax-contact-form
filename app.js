@@ -1,10 +1,13 @@
 $(function() {
 
 	// Get the form.
-	var form = $('#ajax-contact');
+	var form = $('#contact-form');
 
 	// Get the messages div.
 	var formMessages = $('#form-messages');
+
+	// Get form group elements
+	var formGroup = $('.form-group');
 
 	// Set up an event listener for the contact form.
 	$(form).submit(function(e) {
@@ -23,6 +26,7 @@ $(function() {
 		.done(function(response) {
 			// Make sure that the formMessages div has the 'success' class.
 			$(formMessages).removeClass('error');
+			formGroup.fadeOut(900);
 			$(formMessages).addClass('success');
 
 			// Set the message text.
